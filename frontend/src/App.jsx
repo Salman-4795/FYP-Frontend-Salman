@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import Navbar from './Components/Navbar/Navbar'
+import Home from './Components/Home/Home.jsx'
+import Pricing from './Components/Pricing/Pricing.jsx'
+import Title from './Components/Title/Title.jsx'
+import Features from './Components/Features/Features.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Contact from './Components/Contact/Contact.jsx'
+import Footer from './Components/Footer/Footer.jsx'
 
+
+
+const App = () => {
+
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Navbar/>
+      <Home/>
+      <div className="container">
+        <Title subtitle="Our features" title="Highlighting the Best of Our Offerings"/>
+        <Features/>
+        <Title subtitle="Pricing" title="Finding the Right Fit for Your Budget"/>
+        <Pricing/>
+        <Title subtitle="Contact us" title="Get in touch"/>
+        <Contact/>
+        <Footer/>
+        </div>
+    </div>
   )
 }
 
